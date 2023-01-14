@@ -1,0 +1,340 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    cursor: url("zdjecia/normal.png"), auto;
+}
+body{
+    margin: 0;
+    background-color: #8C52FF;
+}
+.start{
+    display: flex;
+    width: 100vw;
+    height: 30vh;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 920px) {
+    .start {
+      height: 15vh;
+    }
+  }
+.s24893{
+    padding: 2vh;
+    background-color: #fff;
+    width: 30vw;
+    border-radius:4vw;
+    text-align: center;
+    color: #8C52FF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vw;
+}
+.quiz{
+    display: flex;
+    justify-content: center;
+    height: 40vh;
+    align-items: center;
+}
+@media screen and (max-width: 920px) {
+    .quiz {
+      flex-direction: column;
+      height: 70vh;
+      justify-content: flex-start;
+    }
+  }
+.quiz-1, .quiz-2, .quiz-3{
+    display: flex;
+    width: 400px;
+    height: 420px;
+    background-color: #fff;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 2vw;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+@media screen and (max-width: 920px) {
+    .quiz-1, .quiz-2, .quiz-3 {
+      width: 60vw;
+      height: 25vh;
+      margin-bottom: 20px;
+    }
+  }
+
+/* button{
+    padding: 1vw;
+    color: #8C52FF;
+    font-weight: bold;
+    border-radius: 20px;
+    border: 1px solid #8C52FF;
+    margin-top: 22vh;
+    margin-bottom: -22vh;
+    width: 10vw;
+} */
+
+.przedmiot{
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.zdjecie{
+    /* background-color: aqua; */
+    background-image: url("tin1.png");
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    width: 10vw;
+    padding: 1vw;
+    color: #8C52FF;
+    font-weight: bold;
+    font-size: 0.7vw;
+    border-radius: 2vw;
+    border: 1px solid #8C52FF;
+    margin-bottom: 1vh;
+    cursor: url("zdjecia/click.png"), auto;
+}
+
+button:active{
+    background-color: rgba(229, 187, 255, 0.5);
+}
+
+.hide{
+    display: none;
+}
+/* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+
+/* .custom-box{
+	max-width: 700px;
+	background-color: #ffffff;
+	margin:40px auto;
+	padding: 30px;
+	border-radius: 10px;
+}
+
+.custom-box::before,
+.custom-box::after{
+	content: '';
+	clear: both;
+	display: flex;
+}
+.btn{
+	padding: 15px 45px;
+	background-color: #009688;
+	color:#ffffff;
+	border:none;
+	border-radius: 5px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.quiz-box .question-number,
+.quiz-box .question-text,
+.quiz-box .option-container,
+.quiz-box .next-question-btn,
+.quiz-box .answers-indicator{
+   width: 100%;
+   float: left;
+}
+.quiz-box .question-number{
+	font-size: 18px;
+	color:#009688;
+	font-weight: 600;
+	border-bottom:1px solid #cccccc;
+	padding-bottom: 10px;
+	line-height: 25px
+}
+.quiz-box .question-text{
+	font-size: 22px;
+	color:#000000;
+	line-height: 28px;
+	font-weight: 400;
+	padding: 20px 0;
+	margin:0;
+}
+.quiz-box .question-text img{
+	max-width: 100%;
+	display: block;
+	margin-top: 15px;
+}
+.quiz-box .option-container .option{
+	background-color: #cccccc;
+	padding:13px 15px;
+	font-size: 16px;
+	line-height: 22px;
+	color:#000000;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	text-transform: capitalize;
+	opacity:0;
+	animation: fadeIn 0.3s ease forwards;
+	position: relative;
+	overflow:hidden;
+}
+.quiz-box .option-container .option.already-answered{
+	pointer-events: none;
+}
+@keyframes fadeIn{
+	0%{
+		opacity:0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+.quiz-box .option-container .option.correct::before{
+ content: '';
+ position: absolute;
+ left:0;
+ top:0;
+ height: 100%;
+ width: 100%;
+ background-color: green;
+ z-index: -1;
+ animation: slideInLeft .5s ease forwards
+}
+@keyframes slideInLeft{
+	0%{
+		transform: translateX(-100%);
+	}
+	100%{
+	 transform: translateX(0%);	
+	}
+}
+.quiz-box .option-container .option.wrong::before{
+ content: '';
+ position: absolute;
+ left:0;
+ top:0;
+ height: 100%;
+ width: 100%;
+ background-color: red;
+ z-index: -1;
+ animation: slideInLeft .5s ease forwards
+}
+.quiz-box .option-container .option.wrong{
+	color:#ffffff;
+}
+.quiz-box .option-container .option.correct{
+	color:#ffffff;
+}
+.quiz-box .btn{
+	margin:15px 0;
+}
+.quiz-box .answers-indicator{
+	border-top: 1px solid #cccccc;
+}
+.quiz-box .answers-indicator div{
+	height: 40px;
+	width: 40px;
+	display: inline-block;
+	background-color: #cccccc;
+	border-radius: 50%;
+	margin-right: 3px;
+	margin-top: 15px;
+}
+.quiz-box .answers-indicator div.correct{
+	background-color: green;
+	background-image: url("../img/correct.png");
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.quiz-box .answers-indicator div.wrong{
+	background-color: red;
+	background-image: url("../img/wrong.png");
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+} */
+
+.a{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.s24894{
+    padding: 3vh;
+    background-color: #fff;
+    min-width: 30vw;
+    border-radius:2vw;
+    color: #8C52FF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vw;
+}
+
+.b{
+ font-size: 16px;
+ border-bottom: 1px solid #8C52FF;
+ margin-bottom: 20px;
+ float: left;
+ width: 100%;
+ padding: 10px;
+}
+
+.c{
+    font-size: 20px;
+    clear: left;
+    text-align: center;
+}
+
+.d{
+    font-size: 16px;
+    width: 100%;
+}
+
+.e{
+    font-size: 16px;
+    text-align: center;
+}
+
+.f{
+padding: 20px;
+background-color: #cccccc;
+margin: 20px;
+border-radius: 1vw;
+cursor: url("zdjecia/click.png"), auto;
+}
+
+.ss{
+    clear: left;
+}
+
+table{
+    border: 1px solid #8C52FF;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 1vw;
+}
+td{
+    font-weight: bold;
+    padding: 10px;
+    width: 20vw;
+    text-align: center;
+}
